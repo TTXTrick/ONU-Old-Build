@@ -34,11 +34,10 @@ sudo apt install -y live-build debootstrap syslinux genisoimage squashfs-tools \
 
 # ---------- PREPARE BUILD DIR ----------
 echo "[2/8] Setting up build directory..."
-sudo rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
-lb config --distribution "$DISTRO" \
+sudo lb config --distribution "$DISTRO" \
            --debian-installer live \
            --archive-areas "main contrib non-free-firmware"
 
